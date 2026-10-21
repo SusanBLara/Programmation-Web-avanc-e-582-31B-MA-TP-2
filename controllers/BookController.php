@@ -45,6 +45,45 @@ class BookController {
         ]);
     }
 
+    public function show($params = []) {
+        $id = $params['id'] ?? null;
+
+        if (!$id) {
+            return View::render('error', ['msg' => 'Livre introuvable']);
+        }
+
+        $bookModel = new Book;
+        $book = $bookModel->selectId($id);
+
+        if (!$book) {
+            return View::render('error', ['msg' => 'Livre introuvable']);
+        }
+
+        // Récupérer le nom de la catégorie
+        $categoryModel = new Category;
+        $category = $categoryModel->selectId($book['category_id']);
+        $categoryName = $category['name'] ?? 'Non renseignée';
+
+        // Récupérer les auteurs du livre
+        $bookAuthorModel = new BookAuthor;
+        $allAuthors = $bookAuthorModel->getAllAuthorsByBook();
+
+        $authors = [];
+
+        foreach ($allAuthors as $author) {
+            if ($author['book_id'] == $id) {
+                $authors[] = $author;
+            }
+
+        }
+
+        return View::render('book/show', [
+            'book' => $book,
+            'categoryName' => $categoryName,
+            'authors' => $authors
+        ]);
+    }
+
     public function create() {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
@@ -401,44 +440,7 @@ class BookController {
 
     }
 
-    public function show($params = []) {
-        $id = $params['id'] ?? null;
-
-        if (!$id) {
-            return View::render('error', ['msg' => 'Livre introuvable']);
-        }
-
-        $bookModel = new Book;
-        $book = $bookModel->selectId($id);
-
-        if (!$book) {
-            return View::render('error', ['msg' => 'Livre introuvable']);
-        }
-
-        // Récupérer le nom de la catégorie
-        $categoryModel = new Category;
-        $category = $categoryModel->selectId($book['category_id']);
-        $categoryName = $category['name'] ?? 'Non renseignée';
-
-        // Récupérer les auteurs du livre
-        $bookAuthorModel = new BookAuthor;
-        $allAuthors = $bookAuthorModel->getAllAuthorsByBook();
-
-        $authors = [];
-
-        foreach ($allAuthors as $author) {
-            if ($author['book_id'] == $id) {
-                $authors[] = $author;
-            }
-
-        }
-
-        return View::render('book/show', [
-            'book' => $book,
-            'categoryName' => $categoryName,
-            'authors' => $authors
-        ]);
-    }
+    
 
     public function delete($data) {
         $id = $data['id'] ?? null;

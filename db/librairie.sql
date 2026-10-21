@@ -1,3 +1,4 @@
+-- Librairie pour enfants - Base de donnees du TP2
 CREATE DATABASE librairie;
 USE librairie;
 
@@ -6,7 +7,7 @@ CREATE TABLE category (
     name VARCHAR(100) NOT NULL,
     description TEXT,
     PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO category (id, name, description) VALUES
 (1, 'Aventure', 'Histoires pleines d’aventures et de découvertes.'),
@@ -21,7 +22,7 @@ CREATE TABLE author (
     birth_year INT DEFAULT NULL,
     biography TEXT,
     PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO author (id, name, country, birth_year, biography) VALUES
 (1, 'Mark Twain', 'États-Unis', 1835, 'Écrivain américain connu pour ses romans d’aventure.'),
@@ -42,16 +43,14 @@ CREATE TABLE book (
     category_id INT NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (category_id) REFERENCES category(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO book
-(id, title, description, page_count, price, edition, age_group, category_id)
-VALUES
+INSERT INTO book (id, title, description, page_count, price, edition, age_group, category_id) VALUES
 (1, 'Les Aventures de Tom Sawyer', 'Les aventures d’un jeune garçon curieux et courageux.', 288, 12.99, 'Gallimard Jeunesse', '9-12 ans', 1),
 (2, 'L\'Histoire sans fin', 'Un jeune garçon découvre un livre mystérieux qui le transporte dans un monde fantastique.', 528, 16.99, 'Le Livre de Poche', '10-14 ans', 2),
-(3, 'Le Petit Prince', 'Un jeune prince voyage de planète en planète et découvre le monde et l’amitié.', 96, 10.99, 'Gallimard', '8-12 ans', 2),
+(3, 'Le Petit Prince', 'Un jeune prince voyage de planète en planète et découvre le monde et l’amitié.', 96, 10.99, 'Gallimard', '8-12 ans', 1),
 (4, 'Martine à la ferme', 'Martine découvre la vie à la ferme et les animaux qui y vivent.', 24, 7.99, 'Casterman', '5-8 ans', 1),
-(9, 'Le Petit Chaperon rouge', 'Une petite fille traverse la forêt pour rendre visite à sa grand-mère. En chemin, elle rencontre un loup qui cherche à la tromper.', 32, 10.00, 'Gallimard Jeunesse', '4-7 ans', 1);
+(9, 'Le Petit Chaperon rouge', 'Une petite fille traverse la forêt pour voir sa grand-mère.', 32, 10.00, 'Gallimard Jeunesse', '4-7 ans', 1);
 
 CREATE TABLE book_author (
     book_id INT NOT NULL,
