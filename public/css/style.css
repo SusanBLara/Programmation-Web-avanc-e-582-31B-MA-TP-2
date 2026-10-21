@@ -1,0 +1,422 @@
+/* Librairie pour enfants : jaune #FFD34E, rose #FF6FB1, vert #7ED957, bleu #4DB6FF, creme #FFF2D9. */
+
+body {
+    margin: 0 auto;
+    padding: 28px 5% 64px;
+    max-width: 1240px;
+    background-color: #FFF2D9;
+    color: #243449;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+/* Navigation */
+nav {
+    margin-bottom: 48px;
+    padding: 14px 18px;
+    border: 1px solid #e5d8bf;
+    border-top: 5px solid #4DB6FF;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+nav a {
+    display: inline-block;
+    margin: 3px 2px;
+    padding: 8px 13px;
+    border-radius: 7px;
+    color: #243449;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:nth-child(1) {
+    background-color: #FFD34E;
+}
+
+nav a:nth-child(2) {
+    background-color: #FF6FB1;
+}
+
+nav a:nth-child(3) {
+    background-color: #7ED957;
+}
+
+nav a:nth-child(4) {
+    background-color: #FFD34E;
+}
+
+nav a:hover {
+    background-color: #FFD34E;
+    color: #243449;
+}
+
+/* Titres et liens */
+h1, h2 {
+    margin: 0 0 22px;
+    color: #243449;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+h1 { font-size: 36px; }
+h2 { font-size: 30px; }
+p { margin: 0 0 20px; }
+strong { color: #243449; }
+a { color: #24547a; }
+a:hover { color: #88365d; }
+
+/* Formulaires et fiches */
+.container {
+    width: 86%;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 30px 6%;
+    border: 1px solid #e5d8bf;
+    border-top: 6px solid #7ED957;
+    border-radius: 14px;
+    background-color: #ffffff;
+    overflow-wrap: break-word;
+}
+
+.container p {
+    padding-bottom: 14px;
+    border-bottom: 1px solid #FFF2D9;
+}
+
+/* Accueil */
+.home-page {
+    width: 100%;
+    max-width: 1240px;
+    box-sizing: border-box;
+    padding: 32px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #4DB6FF;
+    text-align: left;
+}
+
+.home-picture {
+    display: inline-block;
+    width: 35%;
+    height: auto;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+.home-copy {
+    display: inline-block;
+    width: 63%;
+    box-sizing: border-box;
+    padding: 12px 42px 12px 0;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.home-page h1 {
+    max-width: 560px;
+    margin: 0 0 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    line-height: 1.15;
+}
+
+.home-page p {
+    max-width: 510px;
+    margin: 0 0 24px;
+    padding: 0;
+    border: 0;
+    color: #243449;
+    font-size: 17px;
+}
+
+.home-page .home-subtitle {
+    margin-bottom: 12px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.home-copy .btn {
+    margin: 4px 0 14px;
+    border-color: #FFD34E;
+    background-color: #FFD34E;
+}
+
+.home-copy .btn:hover {
+    border-color: #FFF2D9;
+    background-color: #FFF2D9;
+}
+
+.home-link {
+    display: block;
+    margin-top: 2px;
+    color: #243449;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Petits écrans */
+@media (max-width: 700px) {
+    .home-page { padding: 22px; }
+    .home-picture { width: 100%; max-width: 360px; }
+    .home-copy { width: 100%; padding: 0 0 26px; }
+    .home-page h1 { font-size: 30px; }
+}
+
+/* Champs */
+label {
+    display: block;
+    margin-bottom: 18px;
+    color: #243449;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 7px;
+    padding: 12px 13px;
+    border: 1px solid #b7c4cf;
+    border-radius: 7px;
+    background-color: #ffffff;
+    color: #243449;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #24547a;
+    outline: 2px solid #4DB6FF;
+    outline-offset: 2px;
+    background-color: #ffffff;
+}
+
+fieldset {
+    margin: 0 0 24px;
+    padding: 16px;
+    border: 1px solid #7ED957;
+    border-radius: 8px;
+    background-color: #f0fae9;
+}
+
+legend {
+    padding: 0 7px;
+    color: #243449;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+fieldset label {
+    margin: 6px 0;
+    padding: 5px 0;
+    font-weight: normal;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin: 0 8px 0 0;
+    vertical-align: middle;
+}
+
+/* Actions */
+.btn {
+    display: inline-block;
+    margin: 8px 0 20px;
+    padding: 12px 22px;
+    border: 2px solid #4DB6FF;
+    border-radius: 7px;
+    background-color: #4DB6FF;
+    color: #243449;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    border-color: #7ED957;
+    background-color: #7ED957;
+    color: #243449;
+}
+
+.btn.red {
+    border-color: #FF6FB1;
+    background-color: #FF6FB1;
+    color: #243449;
+}
+
+.btn.red:hover {
+    border-color: #FF6FB1;
+    background-color: #FFF2D9;
+    color: #243449;
+}
+
+a:focus {
+    outline: 2px solid #243449;
+    outline-offset: 3px;
+}
+
+/* Pour voir tout le tableau sur les petits écrans */
+table {
+    display: block;
+    width: 100%;
+    margin: 8px 0 32px;
+    overflow-x: auto;
+    border: 1px solid #e5d8bf;
+    border-radius: 10px;
+    border-spacing: 0;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+th {
+    padding: 16px 18px;
+    background-color: #4DB6FF;
+    border-bottom: 2px solid #4DB6FF;
+    color: #243449;
+    font-size: 13px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+td {
+    padding: 18px;
+    border-bottom: 1px solid #e5d8bf;
+    vertical-align: top;
+}
+
+/* Colore une ligne sur deux pour faciliter la lecture. */
+tr:nth-child(even) { background-color: #FFF2D9; }
+/* Met en évidence la ligne quand on passe la souris dessus. */
+tbody tr:hover { background-color: #f0fae9; }
+/* Met les liens du tableau en gras pour mieux les repérer. */
+td a { font-weight: bold; }
+
+/* Permet de faire défiler le catalogue sur les petits écrans. */
+.catalogue-frame {
+    width: 100%;
+    overflow-x: auto;
+    margin: 8px 0 32px;
+    border: 1px solid #e5d8bf;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.books-table {
+    display: table;
+    width: 100%;
+    min-width: 900px;
+    margin: 0;
+    border: 0;
+}
+
+.books-table th, .books-table td {
+    padding: 14px 12px;
+}
+
+.book-title-column { width: 17%; }
+.book-description-column { width: 28%; }
+
+.books-table th.book-title-column,
+.books-table th.book-description-column {
+    text-align: center;
+}
+
+.book-price, .book-age {
+    white-space: nowrap;
+}
+
+footer {
+    margin-top: 48px;
+    padding: 22px 18px;
+    border-top: 5px solid #4DB6FF;
+    border-radius: 12px 12px 0 0;
+    background-color: #ffffff;
+    color: #243449;
+    font-size: 14px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Page d'erreur */
+
+.error-page {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.error-page__title {
+    color: #ff6fb1;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.error-page__message {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.error-page__button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4db6ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.error-page__button:hover {
+    background-color: #2196f3;
+}
+
+/* Tableau des auteurs */
+.authors-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.authors-table th:nth-child(1) {
+    width: 15%;
+}
+
+.authors-table th:nth-child(2) {
+    width: 12%;
+}
+
+.authors-table th:nth-child(3) {
+    width: 19%;
+}
+
+.authors-table th:nth-child(4) {
+    width: 39%;
+}
+
+/* Messages de validation sous les champs. */
+.error {
+    display: block;
+    box-sizing: border-box;
+    margin: 6px 0 18px;
+    padding: 5px 8px;
+    border: 1px solid #e00000;
+    border-radius: 5px;
+    background-color: #ffc4c4;
+    color: #b00000;
+    font-size: 14px;
+}
